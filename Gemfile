@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'wkhtmltopdf-binary'
+gem "wkhtmltopdf-heroku", group: :production
+
 gem 'wicked_pdf'
 
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
