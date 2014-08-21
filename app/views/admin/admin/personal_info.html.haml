@@ -1,0 +1,23 @@
+
+
+.row.h2 Personal Info
+
+=form_for [:admin, @info] do |f|
+	.row.form-group
+		.col-md-1=f.label :name
+		.col-md-4=f.text_field :name, class: 'form-control'
+	.row.form-group
+		.col-md-1=f.label :city
+		.col-md-4=f.text_field :city, class: 'form-control'
+	.row.form-group
+		.col-md-1=f.label :state
+		.col-md-4=f.text_field :state, class: 'form-control'
+	.row.form-group
+		.col-md-1=f.label :zipcode
+		.col-md-4=f.text_field :zipcode, class: 'form-control'
+	.row.form-group
+		.col-md-1=f.label :email
+		.col-md-4=f.text_field :email, class: 'form-control'
+	.row.form-group
+		.col-md-5
+			=f.submit 'save', class: 'btn btn-primary'
