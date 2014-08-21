@@ -28,7 +28,7 @@
         -# %a.navbar-brand(href="/") Jeremy Hardin
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav.navbar-right
-            %li.navbar-link= link_to "pdf", "resume.pdf"
+            %li.navbar-link= link_to "pdf", "resume.pdf", target: '_blank'
 
     .container
       .row
@@ -45,3 +45,4 @@
         -#       %li= link_to "Link 3", "/path3"
       -# %footer
       -#   %p &copy; Company 2014
+      .row{style: 'margin-bottom: 65px;'}

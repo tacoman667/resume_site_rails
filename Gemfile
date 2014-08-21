@@ -34,6 +34,8 @@ gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem "haml-rails"
 
 gem 'unicorn-rails'
+
+gem 'redcarpet'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
