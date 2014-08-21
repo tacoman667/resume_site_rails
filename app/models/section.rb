@@ -4,6 +4,8 @@ class Section < ActiveRecord::Base
 	# description		:string 
 	# order					:integer
 
+	validates :name, :description, :order, presence: true
+
 	def self.next_order
 		if Section.first.nil?
 			return 0

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   	patch 'personal_info', to: 'admin#update_personal_info'
 
   	get 'sections', to: 'admin#sections', as: :sections
+  	get 'sections/:id', to: 'admin#section', as: :section
+  	patch 'sections/:id', to: 'admin#update_section'
   end
 
   get '/resume', to: 'home#index'

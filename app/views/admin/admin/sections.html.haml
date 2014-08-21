@@ -1,1 +1,9 @@
-Sections
+
+.row.h2 Sections
+
+
+.row
+	.col-md-12
+		%ul
+			-@sections.each do |section|
+				%li=link_to section.name, admin_section_path(section)
