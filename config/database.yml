@@ -1,0 +1,20 @@
+defaults: &defaults
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *defaults
+  database: resume_dev
+
+test: &test
+  <<: *defaults
+  database: resume_test
+
+production:
+  <<: *defaults
+  database: resume
+
+cucumber:
+  <<: *test

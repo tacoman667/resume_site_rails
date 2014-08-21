@@ -1,0 +1,16 @@
+.container
+	.row
+		.h1.col-md-6
+			%strong=@info.name
+		.col-md-6.text-right
+			=link_to "#{@info.city}, #{@info.state} #{@info.zipcode}", "https://maps.google.com?q=#{@info.city},+#{@info.state}+#{@info.zipcode}", target: '_blank'
+			%br
+			=mail_to @info.email, 'email me!', target: '_blank'
+	
+	-@sections.each do |s|
+		.row{style: 'padding-bottom: 35px;'}
+		.row
+			.col-md-12
+				%span.h3=s.name
+				%hr
+				=s.description
