@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :admins
+
+  devise_scope :admin do
+    get "logout", to: "devise/sessions#destroy", as: :logout
+  end
+
   namespace :admin do
   	get '/', to: 'admin#index'
 
@@ -13,5 +19,6 @@ Rails.application.routes.draw do
   end
 
   get '/resume', to: 'home#index'
+  
   root 'home#index'
 end

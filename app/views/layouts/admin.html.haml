@@ -30,10 +30,11 @@
           %ul.nav.navbar-nav.navbar-right
             %li.navbar-link= link_to "Personal Info", admin_personal_info_path
             %li.navbar-link= link_to "Sections", admin_sections_path
+            %li.navbar-link= link_to "Log Out", logout_path
 
     .container
       .row
-        .col-lg-9
+        .col-lg-12
           = bootstrap_flash
           = yield
         -# .col-lg-3
