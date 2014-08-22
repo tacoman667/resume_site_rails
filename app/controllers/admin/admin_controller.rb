@@ -20,12 +20,13 @@ class Admin::AdminController < ApplicationController
   end
 
   def new_section
-  	@section = Section.new(order: Section.next_order)
+  	@section = Section.new
   end
 
   def create_section
   	@section = Section.new(section_params)
-
+    @section.order = Section.next_order
+    
   	if @section.save
   		flash[:notice] = "Successfully created #{@section.name} section"
   		redirect_to action: :sections
