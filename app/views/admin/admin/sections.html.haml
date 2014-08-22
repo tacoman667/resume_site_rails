@@ -1,10 +1,23 @@
 
 .row.h2 Sections
 
-.row{style: 'padding-bottom: 30px;'}=link_to 'add new section', admin_new_section_path, class: 'btn btn-default'
+.row{style: 'padding-bottom: 30px;'}=link_to content_tag('span', ' add', class: 'fa fa-plus-circle'), admin_new_section_path, class: 'btn btn-default'
 
 .row
 	.col-md-12
-		%ul
+		%container
 			-@sections.each do |section|
-				%li=link_to section.name, admin_section_path(section)
+				.row
+					.col-md-2=link_to section.name, admin_section_path(section)
+					.col-md-3
+						.container
+							.row	
+								- if section.is_first?
+									.col-md-1
+								-else
+									.col-md-1=link_to '', admin_move_section_up_path(section), class: 'fa fa-arrow-circle-o-up btn', method: 'patch', style: 'font-size: 20px; padding: 0'
+								- if section.is_last?
+									.col-md-1
+								-else
+									.col-md-1=link_to '', admin_move_section_down_path(section), class: 'fa fa-arrow-circle-o-down btn', method: 'patch', style: 'font-size: 20px; padding: 0'
+								.col-md-1=link_to '', admin_remove_section_path(section), class: 'fa fa-minus-circle btn confirm', style: 'color: red; font-size: 20px; padding: 0', method: 'delete'

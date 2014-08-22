@@ -59,6 +59,29 @@ class Admin::AdminController < ApplicationController
   	end
   end
 
+  def remove_section
+    @section = Section.find params[:id]
+    @section.destroy
+
+    Section.reorder_sections
+
+    redirect_to admin_sections_path
+  end
+
+  def move_section_up
+    section = Section.find params[:id]
+    section.move_up
+    
+    redirect_to admin_sections_path
+  end
+
+  def move_section_down
+    section = Section.find params[:id]
+    section.move_down
+
+    redirect_to admin_sections_path
+  end
+
   private
 
   def section_params

@@ -13,9 +13,12 @@ Rails.application.routes.draw do
 
   	get 'sections', to: 'admin#sections', as: :sections
   	get 'sections/new', to: 'admin#new_section', as: :new_section
-  	get 'sections/:id', to: 'admin#section', as: :section
+    delete 'sections/remove/:id', to: 'admin#remove_section', as: :remove_section
+    patch 'sections/move_up/:id', to: 'admin#move_section_up', as: :move_section_up
+    patch 'sections/move_down/:id', to: 'admin#move_section_down', as: :move_section_down
   	post 'sections/new', to: 'admin#create_section'
-  	patch 'sections/:id', to: 'admin#update_section'
+  	get 'sections/:id', to: 'admin#section', as: :section
+    patch 'sections/:id', to: 'admin#update_section'
   end
 
   get '/resume', to: 'home#index'
