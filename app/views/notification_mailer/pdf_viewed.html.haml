@@ -1,0 +1,10 @@
+
+%ul
+	= "Information provided by: #{IpLookupScraper::URL + @scraper.ip_address}"
+	%li= "Organization: #{@scraper.organization}"
+	%li= "ISP: #{@scraper.isp}"
+	%li= "Host Name: #{@scraper.host_name}"
+	%li= "City: #{@scraper.city}"
+	%li= "State: #{@scraper.state}"
+	%li= "Country: #{@scraper.country}"
+	%li= "Area Code: #{@scraper.area_code}"

@@ -7,6 +7,9 @@ class HomeController < ApplicationController
   	respond_to do |f|
   		f.html
   		f.pdf do
+        ip = request.remote_ip
+        NotificationMailer.pdf_viewed(ip).deliver
+
         render pdf: "the_resume.pdf",
         	template: "home/index.html",
         	page_size: 'Letter',
