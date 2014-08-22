@@ -28,7 +28,7 @@
         -# %a.navbar-brand(href="/") Admin.first.name
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav.navbar-right
-            %li.navbar-link= link_to "pdf", "resume.pdf", target: '_blank'
+            %li.navbar-link= link_to content_tag('span', nil, class: 'fa fa-file-pdf-o'), "resume.pdf", target: '_blank'
 
     .container
       .row
