@@ -44,6 +44,11 @@ gem 'rails_12factor', group: :production
 
 gem 'nokogiri'
 
+group :development, :test do
+	gem 'rspec-rails'
+	gem 'minitest'
+	gem 'factory_girl'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
