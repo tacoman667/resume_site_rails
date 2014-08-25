@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "noreply@#{ENV['DEFAULT_MAIL_HOST']}"
 
   def pdf_viewed(ip_address)
   	@scraper = IpLookupScraper.new(ip_address)
