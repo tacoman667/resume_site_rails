@@ -12,7 +12,7 @@ class IpLookupScraper
 
 		doc = Nokogiri::HTML(open(URL + ip_address))
 
-		tbl = doc.search('div:contains("Information about IP Address")+table')
+		tbl = doc.search('table:contains("Information about ipaddress")')
 
 		@ip_address = ip_address
 		@organization = get_value_from_cell('Organization', tbl)
@@ -25,7 +25,7 @@ class IpLookupScraper
 	end
 
 	def get_value_from_cell(name, tbl)
-		selector = "td:contains('#{name}') input";
+		selector = "td:contains('#{name}') input"
 		val = tbl.search(selector).attr('value').value
 	  if val.blank?
 	  	return 'N/A'
