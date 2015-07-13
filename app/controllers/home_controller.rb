@@ -7,8 +7,10 @@ class HomeController < ApplicationController
   	respond_to do |f|
   		f.html
   		f.pdf do
-        ip = request.remote_ip
-        NotificationMailer.pdf_viewed(ip).deliver
+        if ENV['should_send_emails'] == 'yes'
+          ip = request.remote_ip
+          NotificationMailer.pdf_viewed(ip).deliver
+        end
 
         render pdf: "the_resume.pdf",
         	template: "home/index.html",

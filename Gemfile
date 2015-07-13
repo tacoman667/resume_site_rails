@@ -34,7 +34,9 @@ gem 'twitter-bootstrap-rails', '~> 3.2.0'
 
 gem "haml-rails"
 
-gem 'unicorn-rails'
+# gem 'unicorn-rails'
+
+gem 'puma'
 
 gem 'redcarpet'
 

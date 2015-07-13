@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   	post 'sections/new', to: 'admin#create_section'
   	get 'sections/:id', to: 'admin#section', as: :section
     patch 'sections/:id', to: 'admin#update_section'
+
+    post 'send_emails', to: 'admin#send_emails'
   end
 
   get '/resume', to: 'home#index'

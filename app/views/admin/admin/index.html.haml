@@ -1,4 +1,16 @@
 
 
 .h2
-	This is the admin for the site.
+  This is the admin for the site.
+
+.should_send_emails
+  =form_tag '/admin/send_emails'
+  .checkbox
+    =label_tag do
+      =check_box_tag :should_send_emails, 'yes', ENV['should_send_emails'] == 'yes'
+      should send emails?
+
+:coffee
+  $(document).ready ->
+    $('#should_send_emails').on 'click', ->
+      $('form').submit()

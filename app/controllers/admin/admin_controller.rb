@@ -83,6 +83,13 @@ class Admin::AdminController < ApplicationController
     redirect_to admin_sections_path
   end
 
+  def send_emails
+    should_send_emails = params[:should_send_emails]
+    ENV['should_send_emails'] = should_send_emails
+    puts should_send_emails
+    redirect_to '/admin'
+  end
+
   private
 
   def section_params
