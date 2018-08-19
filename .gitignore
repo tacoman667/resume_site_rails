@@ -26,3 +26,6 @@ config/initializers/secret_token.rb
 .rvmrc
 
 .DS_Store
+
+*.sql
+docker-compose.override.yml

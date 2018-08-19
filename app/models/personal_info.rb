@@ -6,7 +6,7 @@ class PersonalInfo < ActiveRecord::Base
 	# zipcode  :string 
 	# email    :string
 
-	validates :name, :city, :state, :zipcode, :email, presence: true
+	validates :name, :city, :state, :email, presence: true
 
 	def self.info
 		PersonalInfo.first
